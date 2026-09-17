@@ -26,6 +26,8 @@ function determineComputedTheme() {
 }
 
 // Set the theme on page load or when explicitly called
+// Theme icon is a static fa-circle-half-stroke (unambiguous theme toggle,
+// unlike fa-sun which can read as a gear at small sizes), so no icon swap needed.
 function setTheme(theme) {
   const use_theme = theme ||
     localStorage.getItem("theme") ||
@@ -34,10 +36,8 @@ function setTheme(theme) {
 
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
-    $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
   } else if (use_theme === "light") {
     $("html").removeAttr("data-theme");
-    $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
   }
 }
 
