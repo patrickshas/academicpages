@@ -176,6 +176,12 @@ exclude:
   - assets/js/_main.js
   - assets/js/plugins
   - assets/js/vendor
+  # Performance: theme screenshots are only used by README.md on GitHub,
+  # not by the site itself — skip copying ~1.7MB to _site on every build.
+  - images/themes
+  - images/wiki
+  - talkmap.ipynb
+  - talkmap_out.ipynb
   - CHANGELOG
   - Capfile
   - config
